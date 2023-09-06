@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+  
+#background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/* page content */
+h1, h2, h4 {
+  color: lightcyan;
+  font-family: Trebuchet MS;
+  font-weight: bold;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+  margin-top: 30vh; 
+}
+
+h2 { font-size: 3rem; }
+
+@media (max-width: 750px) {
+    #background-video { display: none; }
+    body {
+      background: url("C:/Users/ursha/Documents/Newfolder/laptop_data/Documents/django2/indian_weather/my_app/weather/newweather/templates/1.mp4") repeat;
+      background-size: cover;
+    }
+}
+
+</style>
+<meta charset="utf-8">
+  <title></title>
+</head>
+<body background="C:\Users\ursha\Downloads\us.jpg" >
+
+ <video id = "background-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4">
+  </video>
+
+<h1>Team 12 - EVALUATION NERDS</h1>
+<h2>Road Accidents Severity Prediction </h2>
+<h2>Team Members</h2>
+<h4>1. Preeti Yadav</h4>
+<h4>2. Rohan Bagawade [Project Lead]</h4>
+<h4>3. Surya Dev Singh Jamwal</h4>
+<h4>4. Tejaswini Dhote</h4>
+<h4>5. Usha Amale</h4>
+<h4>6. Vaibhav Khandekar</h4>
+</body>
+</html>
+
+{% endblock %}

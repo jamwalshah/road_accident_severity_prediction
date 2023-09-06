@@ -1,0 +1,242 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+    <head>
+        <style>
+        fieldset
+            {background-color:grey;
+            width:500px;
+            opacity: 0.9;
+            text-align:center;
+            }
+
+            body{
+  background-color: #373737;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='169' height='169' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23ca481d' fill-opacity='0.81'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.81'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+        body{
+            background-image: "C:\Users\ursha\Downloads\us.jpg";
+            background-size: cover;
+        }
+
+        .input-container{
+            width: 200px;
+        }
+
+        .submit{
+            width: 100px;
+        }
+
+        .label{
+            text-align: left;
+        }
+        .submit{
+            font-weight: bold;
+        }
+
+        </style>
+    </head>
+<body>
+    <center>
+        <h1 style="color: aliceblue;">Road Accidents Severity Prediction</h1><br/>
+    </center>
+    
+    <center>
+        <fieldset>
+          <form method="post" action="">
+            {% csrf_token %}
+            <h3 style="color: aliceblue;">Provide Details to Predict the Severity</h3>
+            <div class="myDiv">
+          <table align="center">
+            <tr>
+                <td><b>
+                    <label class="label" for="Zipcode">Zipcode:-</label></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                    <input class="input-container" name = "Zipcode" type="number" id="Zipcode" required/>
+                </td>
+            </tr>
+        </table> <br/>
+
+        <table align="center">
+            <tr>
+                <td>
+                    <b>
+                    <label for="Temperature">Temperature:-</label></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                    <input class="input-container" name="Temperature" type="number" step="0.00001" min="-45" max = "196" id="Temperature" required/> 
+                </td>
+            </tr>
+        </table> <br/>
+
+        <table align="center">
+            <tr>
+                <td><b>
+                    <label for="Weekday"> Weekday:-</label></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                    <select name="Weekday" class="input-container">
+                        <option value="0">Select day</option>
+                        <option value="0">Sunday</option>
+                        <option value="1">Monday</option>
+                        <option value="2">Tuesday</option>
+                        <option value="3">Wednesday</option>
+                        <option value="4">Thursday</option>
+                        <option value="5">Friday</option>
+                        <option value="6">Saturday</option>
+                    </select>
+                </td>
+            </tr>
+            </table> <br/>
+
+            <table align="center">
+            <tr>
+                <td><b>
+                    <label for="Month">Month:-</label></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                    <td>
+                        <select name="Month" class="input-container">
+                            <option value="0">Select Month</option>
+                            <option value="1">Jan</option>
+                            <option value="2">Feb</option>
+                            <option value="3">Mar</option>
+                            <option value="4">Apr</option>
+                            <option value="5">May</option>
+                            <option value="6">Jun</option>
+                            <option value="7">Jul</option>
+                            <option value="8">Aug</option>
+                            <option value="9">Sep</option>
+                            <option value="10">Oct</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Dec</option>
+                        </select>
+                    </td>
+                </tr>
+            </table> <br/>
+
+            <table align="center">
+                <tr>
+                    <td><b>
+                        <label for="Hour"> Hour:-</label></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td>
+                        <input class="input-container" name="Hour" type="number" min="0" max="23" step="1" id="" required/> 
+                    </td>
+                </tr>
+            </table>
+                 <br/>
+            
+            <table align="center">
+                 <tr>
+                    <td><b>
+                        <label for="">Start Latitude:- </label></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td>
+                        <input class="input-container" name="Latitude" step="0.00001" min="24.56603" max="49.00058" type="number" id="" required/>
+                    </td>
+                </tr> 
+            </table>
+                <br/>
+
+            <table align="center">
+                <tr>
+                    <td><b>
+                        <label for=""> Start Longitude:-</label></b>&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td>
+                        <input class="input-container" name="Longitude" min="-124.54810" max="-67.48413" type="number" step="0.00001" id="" required/>
+                    </td>
+                </tr>
+            </table>
+                <br/>
+
+            <table align="center">
+                <tr>
+                    <td><b>
+                        <label for="Humidity"> Humidity:-</label></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td>
+                        <input class="input-container" name="Humidity" min="0" max="100" type="number" step="1" id="" required/>
+                    </td>
+                </tr> 
+            </table>
+                <br/>
+            <table align="center">
+                <tr>
+                    <td><b>
+                        <label for="">Crossings:- </label></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td>
+                        <input type="radio" id="" name="Crossings" value="1">
+                        <label for="Yes">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <input type="radio" id="" name="Crossings" value="0">
+                        <label for="No">No</label>
+                    </td>
+                </tr> 
+            </table>
+                <br>
+
+            <table align="center">
+                <tr>
+                    <td><b>
+                        <label for="">Weather Condition:- </label></b>
+                    </td>
+                    <td>
+                        <select name="Weather_Condition" class="input-container">
+                            <option value="0">Select Weather Condition</option>
+                            <option value="1">Fair</option>
+                            <option value="0">Cloudy</option>
+                            <option value="7">Mostly Cloudy</option>
+                            <option value="8">Partly Cloudy</option>
+                            <option value="5">Light Rain</option>
+                            <option value="6">Light Snow</option>
+                            <option value="2">Fog</option>
+                            <option value="9">Rain</option>
+                            <option value="3">Haze</option>
+                            <option value="9">Fair / Windy</option>
+                            <option value="4">Heavy Rain</option>
+                            <option value="10">Thunder in the Vicinity</option>
+                        </select>
+                    </td>
+                </tr> 
+            </table>
+                <br/>
+
+
+            <table align="center">
+                <tr>
+                        <input type="checkbox" required> Confirmed?
+                </tr> 
+            </table>
+
+                <br/>
+
+            <table align="center">
+                <tr>
+                    <td>
+                        <input class="submit" type="submit" value="submit" >
+                    </td>
+                </tr>
+
+            </table>
+            </div>
+          </form>
+          </fieldset>
+<br/><br/><br/>
+          {% if result %}
+<div class="output">
+  <button type="button" class="btn btn-success"><h3>The Severity of road accident on traffic = {{ result }} {{ severity }}</h3></button>
+</div>  
+{% endif %}
+
+        </center>
+    </body>
+</html>
+
+{% endblock %}
+
